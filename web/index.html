@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ps refrigeración</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">PS refrigeración</div>
+    <nav class="nav" id="nav-menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#about">Acerca de</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  
+  <section id="inicio" class="hero">
+    <div class="hero-container">
+      <div class="hero-image">
+        <img src="images-1/IMG-20241206-WA0116 (1).jpg" alt="Imagen de perfil o producto" />
+      </div>
+      <div class="hero-text">
+        <h1>Servicio técnico en refrigeración</h1>
+        <p>Atención personalizada, garantía y servicio profesional en aires acondicionados Split con soluciones eficientes y compromiso en cada trabajo.</p>
+        <a href="https://wa.me/5491126974113?text=Hola,%20quiero%20hacer%20una%20consulta..." target="_blank" class="hero-button">Contáctanos</a>
+      </div>
+    </div>
+
+    <div class="scroll-down">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="white">
+        <path d="M12 16.5l-6-6 1.4-1.4L12 13.7l4.6-4.6L18 10.5z"/>
+      </svg>
+    </div>
+
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="tu-foto.jpg" alt="Foto de perfil">
+      </div>
+      <div class="about-content">
+        <h2>Acerca de mí</h2>
+        <p>
+          Soy un técnico matriculado con formación en la Universidad Tecnológica Nacional (UTN), donde realicé un curso que me permitió desarrollar habilidades técnicas y fortalecer mi enfoque práctico profesional en el área.
+        </p>
+        <p>
+          Me especializo en instalación, mantenimiento y reparación de <strong>aires acondicionados Split</strong> para hogares, edificios residenciales y locales comerciales, proporcionando garantía de un año en todos nuestros servicios.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!--<main>
+    <section id="servicios" class="servicios-section">
+      <div class="container">
+        <h2>Servicios</h2>
+        <div class="servicios-grid">
+          <div class="servicio">
+            <img src= "images-1/instalación.jpg" alt="Instalación de aire split">
+            <h3>Instalación de Aires Split</h3>
+            <p>Instalación de equipos split de todas las marcas. Trabajo seguro y garantizado.</p>
+            <a 
+                href="https://wa.me/5491126974113?text=Hola,%20necesito%20una%20instalación%20de%20aire%20acondicionado%20Split." 
+                class="btn-wsp" 
+              target="_blank"
+              >
+            Consultar por WhatsApp
+            </a>
+          </div>
+          <div class="servicio">
+            <img src= "images-1/mantenimiento.jpg" alt="Mantenimiento de aire split">
+          <h3>Mantenimiento Preventivo</h3>
+            <p>Limpieza, revisión y control de funcionamiento para prolongar la vida útil de tu equipo y mejorar su rendimiento.</p>
+            <a 
+                href="https://wa.me/5491126974113?text=Hola,%20necesito%20hacerle%20mantenimiento%20a%20mi%20Split." 
+                class="btn-wsp" 
+              target="_blank"
+              >
+            Consultar por WhatsApp
+              </a>
+
+          </div>
+          <div class="servicio">
+            <img src= "images-1/reparacion.jpg" alt="Reparación de aire split">
+            <h3>Reparación de Fallas</h3>
+            <p>Diagnóstico preciso y reparación de equipos con pérdida de gas, fallas eléctricas o problemas de funcionamiento.</p>
+            <a 
+                href="https://wa.me/5491126974113?text=Hola,%20quiero%20reparar%20mi%20Split." 
+                class="btn-wsp" 
+              target="_blank"
+              >
+            Consultar por WhatsApp
+              </a>
+          </div>
+          <div class="servicio">
+            <img src="images-1/carga-refrigerante.jpg" alt="Carga de refrigerante">
+            <h3>Carga de Refrigerante</h3>
+            <p>Verificación y recarga de gas refrigerante. Se utiliza el tipo de gas adecuado según la marca y modelo.</p>
+            <a 
+                href="https://wa.me/5491126974113?text=Hola,%20necesito%20hacerle%20carga%20de%20refrigerante%20a%20mi%20Split." 
+                class="btn-wsp" 
+              target="_blank"
+              >
+            Consultar por WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main> -->
+
+  <section id="servicios" class="servicios-section">
+  <div class="container">
+    <h2>Servicios</h2>
+
+    <div class="slider-container">
+      <button class="slider-btn left" onclick="moverSlider(-1)">&#10094;</button>
+      <div class="slider-wrapper">
+
+
+        <div class="slider" id="sliderServicios">
+          <div class="servicio slide">
+            <img src="images-1/instalación.jpg" alt="Instalación de aire split">
+            <h3>Instalación de Aires Split</h3>
+            <p>Instalación de equipos split de todas las marcas. Trabajo seguro y garantizado.</p>
+            <a 
+              href="https://wa.me/5491126974113?text=Hola,%20necesito%20una%20instalación%20de%20aire%20acondicionado%20Split." 
+              class="btn-wsp" 
+              target="_blank"
+            >
+              Consultar por WhatsApp
+            </a>
+          </div>
+
+          <div class="servicio slide">
+            <img src="images-1/mantenimiento.jpg" alt="Mantenimiento de aire split">
+            <h3>Mantenimiento Preventivo</h3>
+            <p>Limpieza, revisión y control de funcionamiento para prolongar la vida útil de tu equipo y mejorar su rendimiento.</p>
+            <a 
+              href="https://wa.me/5491126974113?text=Hola,%20necesito%20hacerle%20mantenimiento%20a%20mi%20Split." 
+              class="btn-wsp" 
+              target="_blank"
+            >
+              Consultar por WhatsApp
+            </a>
+          </div>
+
+          <div class="servicio slide">
+            <img src="images-1/reparacion.jpg" alt="Reparación de aire split">
+            <h3>Reparación de Fallas</h3>
+            <p>Diagnóstico preciso y reparación de equipos con pérdida de gas, fallas eléctricas o problemas de funcionamiento.</p>
+            <a 
+              href="https://wa.me/5491126974113?text=Hola,%20quiero%20reparar%20mi%20Split." 
+              class="btn-wsp" 
+              target="_blank"
+            >
+              Consultar por WhatsApp
+            </a>
+          </div>
+
+          <div class="servicio slide">
+            <img src="images-1/carga-refrigerante.jpg" alt="Carga de refrigerante">
+            <h3>Carga de Refrigerante</h3>
+            <p>Verificación y recarga de gas refrigerante. Se utiliza el tipo de gas adecuado según la marca y modelo.</p>
+            <a 
+              href="https://wa.me/5491126974113?text=Hola,%20necesito%20hacerle%20carga%20de%20refrigerante%20a%20mi%20Split." 
+              class="btn-wsp" 
+              target="_blank"
+            >
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+        <button class="slider-btn right" onclick="moverSlider(1)">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+
+<section id="contacto" class="contacto-section">
+     <h2 class="titulo-contacto">Contacto</h2>
+
+    <div class="contacto-container">
+      <h2>Enviame un correo</h2>
+      <p>¿Necesitás ayuda con tu aire acondicionado Split? Completá el formulario y te responderé a la brevedad.</p>
+    
+      <form action="mailto:ezpablososa@gmail.com" method="POST" enctype="text/plain">
+        <div class="form-group">
+          <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="email" name="Email" placeholder="Tu email" required>
+        </div>
+
+        <div class="form-group">
+          <textarea id="mensaje" name="Mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+
+
+  <a href="https://wa.me/5491126974113?text=Hola,%20quiero%20hacer%20una%20consulta..." 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Enviar mensaje por WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" 
+       alt="WhatsApp" />
+</a>
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+
+let currentIndex = 0;
+
+function moverSlider(direction) {
+  const slider = document.getElementById('sliderServicios');
+  const slides = document.querySelectorAll('.slide');
+  const itemsPerView = 2;
+  const maxIndex = slides.length - itemsPerView;
+
+  currentIndex += direction;
+
+  // volver al principio si se pasa del final
+  if (currentIndex > maxIndex) {
+    currentIndex = 0;
+  }
+
+  // ir al final si se retrocede más allá del inicio
+  if (currentIndex < 0) {
+    currentIndex = maxIndex;
+  }
+
+  const slideWidth = slides[0].offsetWidth + 20; // ancho de cada slide + margen
+  slider.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+}
+
+document.querySelector('.scroll-down').addEventListener('click', () => {
+  const siguienteSeccion = document.getElementById('about');
+  if (siguienteSeccion) {
+    siguienteSeccion.scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+
+</script>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section contacto">
+      <h3>Contacto</h3>
+      <p><strong>Teléfono:</strong> +54 9 11 2697 4113</p>
+      <p><strong>Email:</strong> <a href="mailto:ezpablo13sosa@gmail.com">ezpablo13sosa@gmail.com</a></p>
+      <p><strong>Localidades:</strong> CABA - Zona sur</p>
+      <a href="https://wa.me/5491126974113" target="_blank" class="btn-whatsapp-footer">
+        <img src="images-1/WhatsApp.svg" alt="WhatsApp" /> Escríbenos al WhatsApp
+      </a>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Enlaces</h3>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#acerca-de">Acerca de</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+
+    <div class="footer-section redes">
+      <h3>Sígueme</h3>
+      <div class="redes-icons">
+        <a href="#" aria-label="Facebook"><img src="images-1/Facebook_f_logo.svg" alt="Facebook" /></a>
+        <a href="#" aria-label="Instagram"><img src="images-1/Instagram_icon.png" alt="Instagram" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copy">
+    <p> PS refrigeración © 2025 |  Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
