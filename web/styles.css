@@ -74,17 +74,18 @@ body {
 
 .hero-button {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: #0077ff;
+  padding: 15px 24px;
+  background-color: #0a6ad8;
   color: white;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 550;
   transition: background-color 0.3s ease;
+  font-size: 20px;
 }
 
 .hero-button:hover {
-  background-color: #005fd6;
+  background-color: #004599;
 }
 
 @keyframes fadeInUp {
@@ -151,7 +152,7 @@ body {
   display: flex;
   gap: 40px;
   font-size: 20px;
-  margin-left: 700px; /* Actualmente lo empuja a la derecha */
+  margin-left: 450px; /* Actualmente lo empuja a la derecha */
 }
 
 .nav a {
@@ -221,7 +222,7 @@ body {
 /* ACERCA DE */
 .about-section {
   padding: 150px 20px;
-  background-color: #cad1fd;
+  background-color: #f0f0f0;
   font-family: 'Segoe UI', sans-serif;
   color: #222;
 }
@@ -263,6 +264,80 @@ body {
   margin-bottom: 20px;
 }
 
+/* POR QUÉ ELEGIRNOS */
+
+
+#porque-elegirme {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #7985f0, #adb2da);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Contenedor */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Títulos */
+.section-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+  padding: 70px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Icono */
+.card .icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+/* Título dentro de cada card */
+.card h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Texto dentro de cada card */
+.card p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2em;
+  }
+  .section-subtitle {
+    font-size: 1em;
+  }
+}
 
 
 /* SERVICIOS */
@@ -337,7 +412,7 @@ body {
 }
 
 .slide {
-  flex: 0 0 44%;    /* un poco más chico para dejar espacio */
+  flex: 0 0 40%;    /* un poco más chico para dejar espacio */
   margin: 0 20px;   /* margen lateral más amplio */
   box-sizing: border-box;
   padding: 20px;
@@ -402,7 +477,7 @@ body {
 
 .contacto-section {
   padding: 90px 20px;
-  background-color: #cad1fd;
+  background: linear-gradient(to right, #7985f0, #adb2da);
 }
 
 .contacto-container {
@@ -590,5 +665,179 @@ textarea:focus {
 
   .footer-section {
     min-width: 100%;
+  }
+}
+
+
+
+/* VENTANA CONSULTAR */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  overflow: auto;
+}
+
+.modal-content {
+  background: #d7ebff;
+  max-width: 1000px;
+  margin: 5% auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+  z-index: 10;
+}
+
+.modal-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.modal-image {
+  flex: 1;
+  min-width: 300px;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info {
+  flex: 2;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.modal-info h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #222;
+}
+
+.modal-info p {
+  color: #555;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: #f9f9f9;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.option-card input {
+  display: none;
+}
+
+/* Cambia TODO el box cuando está seleccionado */
+.option-card input:checked + .card-content {
+  background-color: #eafff1;
+  font-weight: bold;
+  color: #1b8e5a;
+}
+
+
+textarea#comentarioAdicional {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  background: #fcfcfc;
+  min-height: 100px;
+}
+
+.form-actions {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.form-actions button {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-actions button:hover {
+  background-color: #1ebe5d;
+}
+
+.visita-info {
+  background-color: #fff8e1;
+  border: 1px solid #ffe08c;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.visita-info strong {
+  font-size: 16px;
+  color: #a67400;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.visita-info .sub-text {
+  font-size: 14px;
+  color: #6c5b00;
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .modal-grid {
+    flex-direction: column;
+  }
+
+  .card-group {
+    grid-template-columns: 1fr;
   }
 }
