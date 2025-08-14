@@ -105,53 +105,31 @@
             <img src="images-1/instalación.jpg" alt="Instalación de aire split">
             <h3>Instalación de Aires Split</h3>
             <p>Instalación de equipos split de todas las marcas. Trabajo seguro y garantizado.</p>
-            <a 
-              href="https://wa.me/5491126974113?text=Hola,%20necesito%20una%20instalación%20de%20aire%20acondicionado%20Split." 
-              class="btn-wsp" 
-              target="_blank"
-            >
-              Consultar 
-            </a>
+            <button class="btn-wsp" onclick="abrirModalInstalacion()">Consultar</button>
           </div>
 
+
           <div class="servicio slide">
-            <img src="images-1/desmontar-un-aire-acondicionado.jpg" alt="Desinstalación de aire split">
+            <img src="images-1/desmontar-un-aire-acondicionado.jpg" alt="Reparación de aire split">
             <h3>Desinstalación de Aires Split</h3>
             <p>Desinstalación de equipos split de todas las marcas. Trabajo seguro y garantizado.</p>
-            <a 
-              href="https://wa.me/5491126974113?text=Hola,%20necesito%20desinstalar%20un%20aire%20acondicionado%20Split." 
-              class="btn-wsp" 
-              target="_blank"
-            >
-              Consultar
-            </a>
+            <button class="btn-wsp" onclick="abrirModalDesinstalacion()">Consultar</button>
           </div>
 
           <div class="servicio slide">
             <img src="images-1/mantenimiento.jpg" alt="Mantenimiento de aire split">
             <h3>Mantenimiento Preventivo</h3>
             <p>Limpieza, revisión y control de funcionamiento para prolongar la vida útil de tu equipo y mejorar su rendimiento.</p>
-            <a 
-              href="https://wa.me/5491126974113?text=Hola,%20necesito%20hacerle%20mantenimiento%20a%20mi%20Split." 
-              class="btn-wsp" 
-              target="_blank"
-            >
-              Consultar
-            </a>
+            <button class="btn-wsp" onclick="abrirModalMantenimiento()">Consultar</button>
           </div>
 
           <div class="servicio slide">
             <img src="images-1/carga-refrigerante.jpg" alt="Carga de refrigerante">
             <h3>Carga de Refrigerante</h3>
-            <p>Verificación y recarga de gas refrigerante. Se utiliza el tipo de gas adecuado según la marca y modelo.</p>
-            <a 
-              href="https://wa.me/5491126974113?text=Hola,%20necesito%20hacerle%20carga%20de%20refrigerante%20a%20mi%20Split." 
-              class="btn-wsp" 
-              target="_blank"
-            >
-              Consultar
-            </a>
+            <p>Verificación y recarga de refrigerante. Se utiliza el tipo de gas adecuado según la marca y modelo.</p>
+            <button class="btn-wsp" onclick="abrirModalCarga()">Consultar</button>
           </div>
+
           
           <div class="servicio slide">
             <img src="images-1/reparacion.jpg" alt="Reparación de aire split">
@@ -166,57 +144,272 @@
     </div>
   </section>
 
-<div id="modalReparacion" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="cerrarModalReparacion()">&times;</span>
+
+   <!--modal reparacion-->
+  <div id="modalReparacion" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModalReparacion()">&times;</span>
     
-    <div class="modal-grid">
-      <div class="modal-image">
-        <img src="images-1/reparacion.jpg" alt="Reparación aire acondicionado">
-      </div>
+      <div class="modal-grid">
+        <div class="modal-image">
+          <img src="images-1/reparacion.jpg" alt="Reparación aire acondicionado">
+        </div>
 
-      <div class="modal-info">
-        <h2>¿Qué le pasa a tu equipo?</h2>
-        <p>Seleccioná una o más fallas. Si no la encontrás entre las opciones, escribila abajo en comentarios.</p>
-          <div class="visita-info">
-            <strong>💵 Costo de la visita técnica: $10.000</strong>
-            <p class="sub-text">Este valor se descuenta si se realiza el trabajo.</p>
-          </div>
+        <div class="modal-info">
+          <h2>¿Qué le pasa a tu equipo?</h2>
+          <p>Seleccioná una o más fallas. Si no la encontrás entre las opciones, escribila abajo en comentarios.</p>
+            <div class="visita-info">
+              <strong>💵 Costo de la visita técnica: $10.000</strong>
+            </div>
 
-        <form id="formReparacionAvanzado">
-          <div class="card-group">
-            <label class="option-card">
-              <input type="checkbox" value="No enfría correctamente">
-              <div class="card-content">No enfría/calienta correctamente</div>
-            </label>
+          <form id="formReparacionAvanzado">
+            <div class="card-group">
+              <label class="option-card">
+                <input type="checkbox" value="No enfría correctamente">
+                <div class="card-content">No enfría/calienta correctamente</div>
+              </label>
 
-            <label class="option-card">
-              <input type="checkbox" value="Hace ruidos extraños">
-              <div class="card-content">Hace ruidos extraños</div>
-            </label>
-            <label class="option-card">
-              <input type="checkbox" value="Se apaga solo">
-              <div class="card-content">Se apaga solo</div>
-            </label>
-            <label class="option-card">
-              <input type="checkbox" value="Cae agua de la unidad interior">
-              <div class="card-content">Cae agua de la unidad interior</div>
-            </label>
-          </div>
+              <label class="option-card">
+                <input type="checkbox" value="Hace ruidos extraños">
+                <div class="card-content">Hace ruidos extraños</div>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" value="Se apaga solo">
+                <div class="card-content">Se apaga solo</div>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" value="Cae agua de la unidad interior">
+                <div class="card-content">Cae agua de la unidad interior</div>
+              </label>
+            </div>
 
-          <textarea id="comentarioAdicional" placeholder="Escribe un comentario..."></textarea>
+            <textarea id="comentarioAdicional" placeholder="Escribe un comentario..."></textarea>
 
-          <div class="form-actions">
-            <button type="button" onclick="enviarConsultaReparacion()">Enviar mensaje por WhatsApp</button>
-          </div>
-        </form>
+            <div class="form-actions">
+              <button type="button" onclick="enviarConsultaReparacion()">Enviar mensaje por WhatsApp</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <!--modal mantenimiento-->
+  <div id="modalMantenimiento" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModalMantenimiento()">&times;</span>
+    
+      <div class="modal-grid">
+        <div class="modal-image">
+          <img src="images-1/mantenimiento.jpg" alt="Mantenimiento de aire acondicionado">
+        </div>
+
+        <div class="modal-info">
+          <h2>Mantenimiento Preventivo</h2>
+          <p>Seleccioná una opción.</p>
+            <div class="visita-info">
+              <strong>💵 Costo de la visita técnica: $10.000</strong>
+            </div>
+
+<form id="formMantenimientoAvanzado">
+  <div class="mantenimiento-grid">
+
+                <div class="card-group">
+              <label class="option-card">
+                <input type="checkbox" value="Limpieza">
+                <div class="card-content">Limpieza</div>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" value="Revisión">
+                <div class="card-content">Revisión</div>
+              </label>
+    <!-- Limpieza -->
+    <div class="mantenimiento-box limpieza-box">
+      <h3>🧼 ¿Por qué hacer una Limpieza?</h3>
+      <div id="textoSecuencialLimpieza" class="texto-secuencial"></div>
+    </div>
+
+    <!-- Cada cuánto hacer un mantenimiento -->
+    <div class="mantenimiento-box limpieza-box">
+      <h3>🔎¿Cada cuánto se hace un mantenimiento? </h3>
+      <div id="textoSecuencialLimpieza" class="texto-secuencial"> </div>
+      <p>✅ Es recomendable hacer mantenimiento cada 4 meses.</p>
+    </div>
+  </div>
+
+  <!-- Botón -->
+  <div class="form-actions">
+    <button type="button" onclick="enviarConsultaMantenimiento()">Enviar mensaje por WhatsApp</button>
+  </div>
+</form>
 
 
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!---modal Instalación-->
+  <div id="modalInstalacion" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModalInstalacion()">&times;</span>
+    
+        <div class="modal-grid">
+          <div class="modal-image">
+            <img src="images-1/instalación.jpg" alt="Instalación de aire acondicionado">
+          </div>
+
+        <div class="modal-info">
+          <h2>¿Necesitás instalar tu Split?</h2>
+          <div class="modal-precio">
+                Desde $180.000
+          </div>
+
+          <div class="anticipo-refrigerante">
+            💡 El pago de los materiales se realiza por adelantado.
+          </div>
+  
+          <div class="visita-info">
+            <strong>💵 Costo de la visita técnica: $10.000</strong>
+            <p class="sub-text">La visita técnica es obligatoria para evaluar el equipo, tomar medidas y brindar recomendaciones personalizadas, asegurando un trabajo seguro y adaptado a tu espacio.</p>
+          </div>
+
+          <form id="formInstalacionAvanzado">
+            <p class="sub-text">El precio de la instalación puede variar según el tipo y tamaño del equipo.<br>Selecciona el tuyo.
+          </p>
+            <div class="card-group">
+              <label class="option-card">
+                <input type="checkbox" value="2000 a 4000 Frigorías">
+                <div class="card-content">2000 a 4000 Frigorías</div>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" value="más de 6000 Frigorías">
+                <div class="card-content">más de 6000 Frigorías</div>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" value="4000 a 6000 Frigorías">
+                <div class="card-content">4000 a 6000 Frigorías</div>
+              </label>
+
+
+              <label class="option-card">
+                <input type="checkbox" value="No sé de cuantas Frigorías es">
+                <div class="card-content">No tengo ese dato</div>
+              </label>
+            </div>
+
+            <p class="modal-aclaracion">
+              <strong>¡Con garantía de un año en instalaciones!</strong>
+                Se entrega por escrito y firmada, especificando el trabajo realizado, las condiciones de cobertura y el plazo exacto.
+            </p>
+            <div class="form-actions">
+              <button type="button" onclick="enviarConsultaInstalacion()">Enviar mensaje por WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--modal Desinstalación-->
+    <div id="modalDesinstalacion" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModalDesinstalacion()">&times;</span>
+    
+        <div class="modal-grid">
+          <div class="modal-image">
+            <img src="images-1/desmontar-un-aire-acondicionado.jpg" alt="desinstalación de aire acondicionado">
+          </div>
+
+        <div class="modal-info">
+          <h2>¿Necesitás desinstalar tu Split?</h2>
+          <div class="modal-precio">
+                Desde $50.000
+          </div>
+          <p class="sub-text">El precio de la desinstalación puede variar según el tipo y tamaño del equipo.<br>Selecciona el tuyo.
+          </p>
+  
+          <div class="visita-info">
+            <strong>💵 Costo de la visita técnica: $10.000</strong>
+          </div>
+
+          <form id="formInstalacionAvanzado">
+            <div class="card-group">
+              <label class="option-card">
+                <input type="checkbox" value="2000 a 4000 Frigorías">
+                <div class="card-content">2000 a 4000 Frigorías</div>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" value="más de 6000 Frigorías">
+                <div class="card-content">más de 6000 Frigorías</div>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" value="4000 a 6000 Frigorías">
+                <div class="card-content">4000 a 6000 Frigorías</div>
+              </label>
+
+
+              <label class="option-card">
+                <input type="checkbox" value="No sé de cuantas Frigorías es">
+                <div class="card-content">No tengo ese dato</div>
+              </label>
+            </div>
+
+            <p class="modal-aclaracion">
+              En caso de solicitarlo, el equipo quedará completamente presurizado y cargado con el refrigerante adecuado para una posible instalación futura.
+            </p>
+            <div class="form-actions">
+              <button type="button" onclick="enviarConsultaDesinstalacion()">Enviar mensaje por WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--modal CARGA REFRIGERANTE-->
+    <div id="modalCarga" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModalCarga()">&times;</span>
+    
+        <div class="modal-grid">
+          <div class="modal-image">
+            <img src="images-1/carga-refrigerante.jpg" alt="carga de refrigerante">
+          </div>
+
+        <div class="modal-info">
+          <h2>Carga de refrigerante</h2>
+          <div class="modal-precio">
+                Hasta $55.000
+          </div>
+
+          <p class="sub-text">La carga de refrigerante solo debe realizarse si hay una fuga o problema detectado.<strong> El refrigerante no se consume ni se agota solo.</strong>
+          </p>
+          <div class="anticipo-refrigerante">
+            💡 El pago del refrigerante se realiza por adelantado.
+          </div>
+          <div class="visita-info">
+            <strong>💵 Costo de la visita técnica: $10.000</strong>
+            <p class="sub-text">La visita es necesaria para determinar el tipo y cantidad de refrigerante, además de evaluar otros detalles esenciales para un diagnóstico preciso.</p>
+          </div>
+
+            <p class="modal-aclaracion">
+              No se hacen cargas a equipos que usan refrigerante R32 (inflamable).
+            </p>
+            <div class="form-actions">
+              <button type="button" onclick="enviarConsultaCarga()">Enviar mensaje por WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <section id="contacto" class="contacto-section">
@@ -226,7 +419,7 @@
       <h2>Enviame un mensaje</h2>
       <p>¿Necesitás ayuda con tu aire acondicionado Split? Completá el formulario y te responderé a la brevedad.</p>
     
-      <form action="mailto:ezpablososa@gmail.com" method="POST" enctype="text/plain">
+      <form action="mailto: pablososar.a@gmail.com" method="POST" enctype="text/plain">
         <div class="form-group">
           <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
         </div>
@@ -257,94 +450,7 @@
 </a>
 
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      hamburger.classList.toggle('active');
-    });
-
-
-  let currentIndex = 0;
-
-  function moverSlider(direction) {
-    const slider = document.getElementById('sliderServicios');
-    const slides = document.querySelectorAll('.slide');
-    const btnLeft = document.querySelector('.slider-btn.left');
-    const btnRight = document.querySelector('.slider-btn.right');
-
-    const itemsPerView = 2;
-    const maxIndex = slides.length - itemsPerView;
-
-    currentIndex += direction;
-
-    // Limitar el índice
-    if (currentIndex < 0) currentIndex = 0;
-    if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-    const slideWidth = slides[0].offsetWidth + 40; // ancho de slide + margen
-    slider.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-
-    // Ocultar/mostrar flechas
-    btnLeft.style.display = currentIndex === 0 ? 'none' : 'block';
-    btnRight.style.display = currentIndex >= maxIndex ? 'none' : 'block';
-  }
-
-  // Mostrar/ocultar flechas al cargar y al redimensionar
-  function updateSlider() {
-    moverSlider(0); // fuerza el estado correcto sin mover el slider
-  }
-
-  window.addEventListener('load', updateSlider);
-  window.addEventListener('resize', updateSlider);
-
-  // Scroll a la siguiente sección
-  document.querySelector('.scroll-down')?.addEventListener('click', () => {
-    const siguienteSeccion = document.getElementById('about');
-    if (siguienteSeccion) {
-      siguienteSeccion.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-
-
-  /* BOTÓN CONSULTAR REPARACIONES */
-
-  function abrirModalReparacion() {
-    document.getElementById('modalReparacion').style.display = 'block';
-  }
-
-  function cerrarModalReparacion() {
-    document.getElementById('modalReparacion').style.display = 'none';
-  }
-
-  function enviarConsultaReparacion() {
-    const selected = document.querySelectorAll('.option-card input:checked');
-    const comentario = document.getElementById('comentarioAdicional').value.trim();
-    const fallas = Array.from(selected).map(cb => cb.value);
-
-    let mensaje = "Hola, quiero reparar mi aire acondicionado. Las fallas que detecté son:\n\n";
-    if (fallas.length > 0) {
-      mensaje += fallas.map(f => `• ${f}`).join('\n') + "\n";
-    }
-
-    if (comentario) {
-      mensaje += `\nComentario:\n${comentario}`;
-    }
-
-    const numero = "5491126974113";
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
-    cerrarModalReparacion();
-  }
-
-  window.onclick = function(event) {
-    const modal = document.getElementById('modalReparacion');
-    if (event.target === modal) {
-      cerrarModalReparacion();
-    }
-  }
+  <script src="scripts.js">
 </script>
 
 
@@ -386,6 +492,8 @@
     <p> PS refrigeración © 2025 |  Todos los derechos reservados.</p>
   </div>
 </footer>
+
+<div id="toastAviso" class="toast-aviso"></div>
 
 </body>
 </html>
