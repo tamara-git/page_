@@ -237,3 +237,24 @@ window.onclick = function(event) {
     }
   });
 };
+
+// =========================
+// ACTUALIZAR PRECIO EN MODAL INSTALACIÓN
+// =========================
+document.querySelectorAll('#formInstalacionAvanzado input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        // Desmarcar los demás checkboxes para que actúe como un radio button
+        document.querySelectorAll('#formInstalacionAvanzado input[type="checkbox"]').forEach(cb => {
+            if (cb !== this) cb.checked = false;
+        });
+
+        let precio = this.getAttribute('data-precio');
+        let precioDiv = document.getElementById('precioInstalacion');
+
+        if (precio === "Consultar") {
+            precioDiv.textContent = "Consultar precio";
+        } else {
+            precioDiv.textContent =  "$" + Number(precio).toLocaleString("es-AR");
+        }
+    });
+});
