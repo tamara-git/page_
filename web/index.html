@@ -143,6 +143,7 @@
             </div>
             <div class="modal-info">
                 <h2>¿Qué le pasa a tu equipo?</h2>
+                <div class="modal-precio" id="precioReparacion">Presupuesto s/ cargo</div>
                 <p>Seleccioná una o más fallas. Si no la encontrás entre las opciones, escribila abajo en comentarios.</p>
                 <div class="visita-info">
                     <strong>💵 Costo de la visita técnica: $10.000</strong>
@@ -186,19 +187,17 @@
             </div>
             <div class="modal-info">
                 <h2>Mantenimiento Preventivo</h2>
-                <div class="visita-info">
-                    <strong>💵 Costo de la visita técnica: $10.000</strong>
-                </div>
+                <div class="modal-precio" id="precioMantenimiento">Presupuesto s/ cargo</div>
                 <form id="formMantenimientoAvanzado">
                     <p>Seleccioná una opción.</p>
                     <div class="mantenimiento-grid">
                         <div class="card-group">
                             <label class="option-card">
-                                <input type="checkbox" value="Limpieza" />
+                                <input type="checkbox" value="Limpieza"/>
                                 <div class="card-content">Limpieza</div>
                             </label>
                             <label class="option-card">
-                                <input type="checkbox" value="Revisión" />
+                              <input type="checkbox" value="Revision"/>
                                 <div class="card-content">Revisión</div>
                             </label>
                             <!-- Limpieza -->
@@ -208,11 +207,18 @@
                             </div>
                             <!-- Cada cuánto hacer un mantenimiento -->
                             <div class="mantenimiento-box limpieza-box">
-                                <h3>🔎 ¿Cada cuánto se hace un mantenimiento?</h3>
+                                <h3>🔎  ¿Por qué hacer una Revisión?</h3>
                                 <p>✅ Es recomendable hacer mantenimiento cada 4 meses.</p>
                             </div>
                         </div>
                     </div>
+                        <div class="visita-info">
+                          <strong>💵 Costo de la visita técnica: $10.000</strong>
+                        </div>
+                        <p class="modal-aclaracion">
+                          <strong>Es recomendable realizar revisiones y limpieza cada 4 meses.</strong>
+                        </p>
+
                     <!-- Botón -->
                     <div class="form-actions">
                         <button type="button" onclick="enviarConsultaMantenimiento()">Enviar mensaje por WhatsApp</button>
@@ -235,10 +241,6 @@
                 <h2>¿Necesitás instalar tu Split?</h2>
                 <div class="modal-precio" id="precioInstalacion">Desde $180.000</div>
                 <div class="anticipo-refrigerante">💡 El pago de los materiales se realiza por adelantado.</div>
-                <div class="visita-info">
-                    <strong>💵 Costo de la visita técnica: $10.000</strong>
-                    <p class="sub-text">La visita técnica es obligatoria para evaluar el equipo, tomar medidas y brindar recomendaciones personalizadas, asegurando un trabajo seguro y adaptado a tu espacio.</p>
-                </div>
                 <form id="formInstalacionAvanzado">
                     <p class="sub-text">
                         El precio de la instalación puede variar según el tipo y tamaño del equipo.<br>
@@ -250,11 +252,11 @@
                             <div class="card-content">2000 a 4000 Frigorías</div>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" value="más de 6000 Frigorías" data-precio="280000" />
+                            <input type="checkbox" value="más de 6000 Frigorías" data-precio="260000" />
                             <div class="card-content">Más de 6000 Frigorías</div>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" value="4000 a 6000 Frigorías" data-precio="240000" />
+                            <input type="checkbox" value="4000 a 6000 Frigorías" data-precio="220000" />
                             <div class="card-content">4000 a 6000 Frigorías</div>
                         </label>
                         <label class="option-card">
@@ -262,6 +264,10 @@
                             <div class="card-content">No tengo ese dato</div>
                         </label>
                     </div>
+                <div class="visita-info">
+                    <strong>💵 Costo de la visita técnica: $10.000</strong>
+                    <p class="sub-text">La visita técnica es obligatoria para evaluar el equipo, tomar medidas y brindar recomendaciones personalizadas, asegurando un trabajo seguro y adaptado a tu espacio.</p>
+                </div>
                     <p class="modal-aclaracion">
                         <strong>¡Garantía asegurada en cada instalación!</strong>
                         Se entrega por escrito y firmada, especificando el trabajo realizado, las condiciones de cobertura y el plazo exacto.
@@ -285,7 +291,7 @@
             </div>
             <div class="modal-info">
                 <h2>¿Necesitás desinstalar tu Split?</h2>
-                <div class="modal-precio">Desde $50.000</div>
+                <div class="modal-precio" id="precioDesinstalacion">Desde $60.000</div>
                 <p class="sub-text">El precio de la desinstalación puede variar según el tipo y tamaño del equipo.<br>Selecciona el tuyo.</p>
                 <div class="visita-info">
                     <strong>💵 Costo de la visita técnica: $10.000</strong>
@@ -293,19 +299,19 @@
                 <form id="formDesinstalacionAvanzado">
                     <div class="card-group">
                         <label class="option-card">
-                            <input type="checkbox" value="2000 a 4000 Frigorías" />
+                            <input type="checkbox" value="2000 a 4000 Frigorías" data-precio="60000" />
                             <div class="card-content">2000 a 4000 Frigorías</div>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" value="más de 6000 Frigorías" />
+                            <input type="checkbox" value="Más de 6000 Frigorías" data-precio="80000" />
                             <div class="card-content">Más de 6000 Frigorías</div>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" value="4000 a 6000 Frigorías" />
+                            <input type="checkbox" value="4000 a 6000 Frigorías" data-precio="70000" />
                             <div class="card-content">4000 a 6000 Frigorías</div>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" value="No sé de cuantas Frigorías es" />
+                            <input type="checkbox" value="No tengo ese dato" data-precio="Consultar" />
                             <div class="card-content">No tengo ese dato</div>
                         </label>
                     </div>
@@ -328,7 +334,7 @@
             </div>
             <div class="modal-info">
                 <h2>Carga de refrigerante</h2>
-                <div class="modal-precio">Hasta $55.000</div>
+                <div class="modal-precio">Hasta $60.000</div>
                 <p class="sub-text">
                     La carga de refrigerante solo debe realizarse si hay una fuga o problema detectado.
                     <strong> El refrigerante no se consume ni se agota solo.</strong>

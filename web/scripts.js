@@ -77,8 +77,8 @@ function iniciarTextoSecuencialLimpieza() {
   if (!contenedor) return;
 
   const parrafos = [
-    "🌬️ Se acumulan bacterias, polvo y hongos en los filtros y conductos.",
-    "😷 El aire contaminado puede causar graves problemas respiratorios.",
+    "🌬️ Se acumulan bacterias, polvo y hongos en los filtros y conductos...",
+    "😷 El aire contaminado puede causar graves problemas respiratorios...",
     "💡 Una limpieza reduce el consumo eléctrico y alarga la vida útil del equipo.",
   ];
 
@@ -91,7 +91,7 @@ function iniciarTextoSecuencialLimpieza() {
   limpiezaIntervaloID = setInterval(() => {
     contenedor.innerHTML = `<p>${parrafos[index]}</p>`;
     index = (index + 1) % parrafos.length;
-  }, 3500);
+  }, 5000);
 }
 
 // =========================
@@ -239,22 +239,33 @@ window.onclick = function(event) {
 };
 
 // =========================
-// ACTUALIZAR PRECIO EN MODAL INSTALACIÓN
+// ACTUALIZAR PRECIO EN MODALES
 // =========================
-document.querySelectorAll('#formInstalacionAvanzado input[type="checkbox"]').forEach(checkbox => {
+function configurarCambioPrecio(formId, precioId) {
+  const checkboxes = document.querySelectorAll(`#${formId} input[type="checkbox"]`);
+  const precioDiv = document.getElementById(precioId);
+  if (!checkboxes.length || !precioDiv) return;
+
+  checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
-        // Desmarcar los demás checkboxes para que actúe como un radio button
-        document.querySelectorAll('#formInstalacionAvanzado input[type="checkbox"]').forEach(cb => {
-            if (cb !== this) cb.checked = false;
-        });
+      // Desmarcar los demás checkboxes (simular radio button)
+      checkboxes.forEach(cb => {
+        if (cb !== this) cb.checked = false;
+      });
 
-        let precio = this.getAttribute('data-precio');
-        let precioDiv = document.getElementById('precioInstalacion');
-
-        if (precio === "Consultar") {
-            precioDiv.textContent = "Consultar precio";
-        } else {
-            precioDiv.textContent =  "$" + Number(precio).toLocaleString("es-AR");
-        }
+      let precio = this.getAttribute('data-precio');
+  
+      if (precio === "Consultar") {
+        precioDiv.textContent = "Consultar precio";
+      } else {
+        precioDiv.textContent = "$" + Number(precio).toLocaleString("es-AR");
+      }
     });
-});
+
+  });
+}
+
+// Inicializar para instalación-desinstalación
+configurarCambioPrecio("formInstalacionAvanzado", "precioInstalacion");
+configurarCambioPrecio("formDesinstalacionAvanzado", "precioDesinstalacion");
+
