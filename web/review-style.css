@@ -1,0 +1,189 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    background: #c7cdff;
+}
+
+.container{
+    position: relative;
+    width: 400px;
+    background: #222;
+    padding: 20px 30px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .post{
+    display: none;
+
+}
+.container .text{
+    font-size: 25px;
+    color: #666;
+    font-weight: 500;
+}
+
+.container .edit{
+    position: relative;
+    right: 10px; 
+    top: 5px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.container .edit:hover{
+    text-decoration: underline;
+}
+.container .star-widget input{
+    display: none;
+}
+
+.star-widget label{
+    font-size: 40px;
+    color: #666;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label {
+    color: #fd4;
+}
+input:checked ~ label{
+    color: #fd4
+}
+input#rate-5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+
+input#rate-1:checked ~ form header:before{
+    content: "Mal servicio 😞";
+}
+
+input#rate-2:checked ~ form header:before{
+    content: "Servicio Regular 😐";
+}
+
+input#rate-3:checked ~ form header:before{
+    content: "Buen servicio 🙂";
+}
+
+input#rate-4:checked ~ form header:before{
+    content: "¡Muy buen servicio! 😄";
+}
+
+input#rate-5:checked ~ form header:before{
+    content: "¡Excelente servicio! 😁";
+}
+
+.container form{
+    display: none;
+}
+
+input:checked ~ form{
+    display: block;
+}
+
+form header{
+    width: 100%;
+    font-size: 25px;
+    color: #fe7;
+    font-weight: 500;
+    margin: 5px 0 20px 0;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+form .textarea{
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    border: 1px solid #333;
+    background: #333;
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+}
+
+form .btn{
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+form .btn button{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #999;
+    outline: none;
+    background: #333;
+    color: #999;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form .btn button:hover{
+    background: #1b1b1b;
+}
+
+
+
+/* Mostrar siempre el formulario */
+.container form {
+  display: block !important;
+}
+
+/* Mantén el resto igual para que el input se vea bien */
+.nombre {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.nombre input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 30px;   
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  display: block;
+  background-color: #333;
+  color: #fff;
+}
+
+.nombre input:focus {
+  border-color: #f39c12;
+}
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reseñas</title>
+    <link rel="stylesheet" href="review-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+    <form id="formResena" action="#">
+        <div class="nombre">
+            <input type="text" id="nombreUsuario" placeholder="Tu nombre completo" required />
+        </div>
+
+        <div class="star-widget">
+            <input type="radio" name="rate" id="rate-5" value="5" />
+            <label for="rate-5" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-4" value="4" />
+            <label for="rate-4" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-3" value="3" />
+            <label for="rate-3" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-2" value="2" />
+            <label for="rate-2" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-1" value="1" />
+            <label for="rate-1" class="fas fa-star"></label>
+        </div>
+
+        <div class="textarea">
+            <textarea id="textoResena" placeholder="Describe tu experiencia..." required></textarea>
+        </div>
+
+        <div class="btn">
+            <button type="submit">Publicar</button>
+        </div>
+    </form>
+
+    <div id="mensajeError" style="color:red; margin-top:10px; display:none;"></div>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "TU_API_KEY",
+      authDomain: "ps-refrigeracion.firebaseapp.com",
+      projectId: "ps-refrigeracion",
+      storageBucket: "ps-refrigeracion.appspot.com",
+      messagingSenderId: "339516215452",
+      appId: "1:339516215452:web:f9ef77477273f636db9d59"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById('formResena');
+    const mensajeError = document.getElementById('mensajeError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validación nativa para nombre y textarea
+      if (!form.checkValidity()) {
+        form.reportValidity();  // muestra el tooltip nativo
+        return;
+      }
+
+      // Validación manual para rating (radio)
+      const rating = document.querySelector('input[name="rate"]:checked')?.value;
+      if (!rating) {
+        mensajeError.style.display = 'block';
+        mensajeError.textContent = 'Por favor, selecciona una calificación.';
+        return;
+      }
+
+      mensajeError.style.display = 'none'; // ocultar error
+
+      const nombre = document.getElementById('nombreUsuario').value.trim();
+      const texto = document.getElementById('textoResena').value.trim();
+
+      try {
+        await addDoc(collection(db, "reseñas"), {
+          nombre,
+          rating: Number(rating),
+          texto,
+          fecha: serverTimestamp()
+        });
+        mensajeError.style.color = 'green';
+        mensajeError.textContent = '¡Reseña publicada con éxito!';
+        mensajeError.style.display = 'block';
+        form.reset();
+      } catch (error) {
+        console.error('Error al publicar reseña:', error);
+        mensajeError.style.color = 'red';
+        mensajeError.textContent = 'Hubo un error al publicar la reseña.';
+        mensajeError.style.display = 'block';
+      }
+    });
+</script>
+</body>
+</html>

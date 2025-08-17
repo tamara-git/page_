@@ -315,3 +315,27 @@ configurarCambioPrecio("formDesinstalacionAvanzado", "precioDesinstalacion");
   });
 });
 
+
+// =========================
+// SECCIÓN RESEÑA
+// =========================
+
+// script.js — funciones comunes sin importar módulos
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".btn-hacer-resena");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const width = 700;
+      const height = 600;
+      const left = (screen.width / 2) - (width / 2);
+      const top = (screen.height / 2) - (height / 2);
+
+      window.open(
+        'reseñas.html',
+        'popupResena',
+        `width=${width},height=${height},left=${left},top=${top},resizable=no,scrollbars=no`
+      );
+    });
+  }
+});
+

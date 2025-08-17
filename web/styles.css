@@ -29,7 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 120px 20px 190px 20px; /* arriba 120px, derecha 20px, abajo 180px, izquierda 20px */
-  background-image: linear-gradient(rgba(240, 238, 238, 0.644), rgba(168, 167, 167, 0.5)), url(images-1/fondo-inicio-1.jpg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.627), rgba(255, 255, 255, 0.5)), url(images-1/fondo-inicio-1.jpg);
 }
 
 .hero-container {
@@ -59,6 +59,18 @@ body {
 .hero-text {
   flex: 1;
   min-width: 300px;
+  position: relative;
+}
+
+/* Estilo del subtítulo */
+.hero-subtitulo {
+  position: absolute;
+  top: -40px; /* Ajustá según necesidad */
+  right: 0;
+  font-size: 1.4rem; /* Más grande */
+  color: rgb(9, 1, 252);
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Opcional para mejorar visibilidad */
 }
 
 .hero-text h1 {
@@ -114,7 +126,11 @@ body {
   max-width: 400px;
   font-size: 0.9rem;
   transition: transform 0.3s ease;
+
+  /* 👇 Animación de saltitos */
+  animation: saltitos 1s infinite ease-in-out;
 }
+
 
 .promo-card h4 {
   margin-top: 40px; /* O ajustá según necesites */
@@ -153,6 +169,17 @@ body {
     bottom: 10px;
   }
 }
+
+/* animacion de movimiento */
+@keyframes saltitos {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 
 /* FIN PROMO MINI EN HERO */
 
@@ -535,77 +562,100 @@ body {
 }
 
 
-/* CONTACTO MAIL */
+/* RESEÑAS */
+/* ====== ESTILOS AVANZADOS PARA LA SECCIÓN RESEÑAS ====== */
 
-.titulo-contacto {
+#reseñas {
+  background: linear-gradient(135deg, #e0f0ff 0%, #c0ddff 100%);
+  padding: 50px 30px;
+  max-width: 720px;
+  margin: 60px auto;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 122, 204, 0.3);
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a2a42;
+  transition: background 0.4s ease;
+}
+
+#reseñas h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #004a99;
   text-align: center;
-  font-size: 2.3rem;
-  margin-bottom: 70px;
-  color: #222;
-
-}
-
-.contacto-section {
-  padding: 90px 20px;
-  background-color: #f0f0f0;
-}
-
-.contacto-container {
-  margin-top: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #d9e3fd;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  text-align: center;
-}
-
-
-.contacto-container h2 {
-  font-size: 1.6rem;
   margin-bottom: 10px;
-  color: #222;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 5px rgba(0, 74, 153, 0.3);
 }
 
-.contacto-container p {
-  color: #555;
-  margin-bottom: 30px;
+#reseñas p {
+  font-size: 1.15rem;
+  color: #334a72;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
-.form-group {
-  margin-bottom: 20px;
+/* Contenedor general dentro de reseñas */
+#reseñas .container {
+  background: #ffffffdd;
+  padding: 35px 40px;
+  border-radius: 14px;
+  box-shadow:
+    inset 0 0 15px rgba(0, 122, 204, 0.08),
+    0 8px 25px rgba(0, 74, 153, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-input,
-textarea {
-  width: 100%;
-  padding: 14px 18px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1em;
-  transition: border-color 0.3s ease;
+/* Botones, textos y demás dentro del container lo estilizarás en tu CSS aparte */
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  #reseñas {
+    padding: 35px 20px;
+  }
+
+  #reseñas h2 {
+    font-size: 2rem;
+  }
+
+  #reseñas p {
+    font-size: 1rem;
+  }
+
+  #reseñas .container {
+    padding: 25px 20px;
+  }
 }
 
-input:focus,
-textarea:focus {
-  border-color: #25D366;
-  outline: none;
+.reseña-boton {
+  text-align: center;
+  margin-top: 40px;
 }
 
-.btn-enviar {
-  background-color: #25D366;
+/* Botón estilizado */
+.btn-hacer-resena {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #007acc;
   color: #fff;
-  border: none;
-  padding: 14px 30px;
+  font-weight: 700;
   border-radius: 8px;
-  font-size: 1.1em;
+  text-decoration: none;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
+  border: none;
+  user-select: none;
 }
 
-.btn-enviar:hover {
-  background-color: #1ebc59;
+.btn-hacer-resena:hover {
+  background: #005fa3;
 }
 
 /* CONTACTO WHATSAPP */

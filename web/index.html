@@ -31,6 +31,7 @@
         <img src="images-1/IMG-20241206-WA0116 (1).jpg" alt="Imagen de perfil o producto" />
       </div>
       <div class="hero-text">
+        <div class="hero-subtitulo">Servicio técnico en refrigeración</div>
         <h1>¿Cansado de que tu aire acondicionado te abandone cuando más lo necesitás?</h1>
         <p>¡No esperes más! Recuperá el confort y la frescura en tu espacio. Contactame ahora y obtené atención inmediata y un servicio confiable de calidad.</p>
         <a href="https://wa.me/5491126974113?text=Hola,%20quiero%20hacer%20una%20consulta..." target="_blank" class="hero-button">Contactame</a>
@@ -41,26 +42,27 @@
         <path d="M12 16.5l-6-6 1.4-1.4L12 13.7l4.6-4.6L18 10.5z"/>
       </svg>
     </div>
+
     <div class="promo-floating-row">
-  <div class="promo-card">
-    <div class="promo-etiqueta">🔥 ¡OFERTA!</div>
-    <h4>Desinstalación + Reinstalación</h4>
-        <a href="#promos"></a>
-    <p class="promo-precio">Desde $200.000</p>
-  </div>
+      <div class="promo-card">
+        <div class="promo-etiqueta">🔥 ¡OFERTA!</div>
+        <h4>Desinstalación + Reinstalación</h4>
+            <a href="#promos"></a>
+        <p class="promo-precio">Desde $200.000</p>
+      </div>
 
-  <div class="promo-card">
-    <div class="promo-etiqueta color3">💡 EXCLUSIVO</div>
-    <h4>Doble Desinstalación</h4>
-    <p class="promo-precio">$85.000</p>
-  </div>
+      <div class="promo-card">
+        <div class="promo-etiqueta color3">💡 EXCLUSIVO</div>
+        <h4>Doble Desinstalación</h4>
+        <p class="promo-precio">$85.000</p>
+      </div>
 
-  <div class="promo-card">
-    <div class="promo-etiqueta color2">💧 LIMPIEZA</div>
-    <h4>Mantenimiento + Limpieza</h4>
-    <p class="promo-precio">$60.000</p>
-  </div>
-</div>
+      <div class="promo-card">
+        <div class="promo-etiqueta color2">💧 LIMPIEZA</div>
+        <h4>Mantenimiento + Limpieza</h4>
+        <p class="promo-precio">$60.000</p>
+      </div>
+    </div>
 
   </section>
 
@@ -98,7 +100,7 @@
         <div class="card">
           <div class="icon">📅</div>
           <h3>Garantía de un año en instalaciones</h3>
-          <p>Se entrega por escrito y firmada, especificando el trabajo realizado, las condiciones de cobertura y el plazo exacto.</p>
+          <p>Se entrega constancia por escrito y firmada, especificando el trabajo realizado, las condiciones de cobertura y el plazo exacto.</p>
         </div>
         <div class="card">
           <div class="icon">❄️</div>
@@ -296,7 +298,7 @@
                 </div>
                     <p class="modal-aclaracion">
                         <strong>¡Garantía asegurada en cada instalación!</strong>
-                        Se entrega por escrito y firmada, especificando el trabajo realizado, las condiciones de cobertura y el plazo exacto.
+                        Se entrega constancia por escrito y firmada, especificando el trabajo realizado, las condiciones de cobertura y el plazo exacto.
                     </p>
                     <div class="form-actions">
                         <button type="button" onclick="enviarConsultaInstalacion()">Enviar mensaje por WhatsApp</button>
@@ -427,26 +429,27 @@
   </div>
 </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="contacto-section">
-    <h2 class="titulo-contacto">Contacto</h2>
-    <div class="contacto-container">
-      <h2>Enviame un mensaje</h2>
-      <p>¿Necesitás ayuda con tu aire acondicionado Split? Completá el formulario y te responderé a la brevedad.</p>
-      <form action="mailto:pablososar.a@gmail.com" method="POST" enctype="text/plain">
-        <div class="form-group">
-          <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" name="Email" placeholder="Tu email" required>
-        </div>
-        <div class="form-group">
-          <textarea id="mensaje" name="Mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn-enviar">Enviar mensaje</button>
-      </form>
+  <!-- RESEÑAS-->
+<section id="reseñas">
+    <h2>Opiniones de nuestros clientes</h2>
+    <p>Tu opinión nos ayuda a mejorar el servicio de aire acondicionado que ofrecemos.</p>
+    <div class="reseña-boton">
+
+    <button class="btn-hacer-resena">Dejar una reseña</button>
+
     </div>
-  </section>
+    <div class="container">
+        <!-- Aquí va tu widget de reseñas (formulario + estrellas) -->
+        <!-- Pega aquí tu código del widget -->
+
+        <!-- Contenedor donde aparecerán las opiniones enviadas -->
+        <div id="opiniones-container" style="margin-top: 30px;">
+          <h3>Opiniones publicadas:</h3>
+          <div id="opiniones-list"></div>
+        </div>
+    </div>
+</section>
+
 
   
   <!-- FOOTER -->
@@ -486,6 +489,7 @@
 
   <!-- SCRIPTS -->
   <script src="scripts.js"></script>
+  <script type="module" src="firebase-reseñas.js"></script>
 
 </body>
 </html>
