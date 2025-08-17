@@ -48,8 +48,33 @@ window.addEventListener('resize', updateSlider);
 // SCROLL SUAVE
 // =========================
 document.querySelector('.scroll-down')?.addEventListener('click', () => {
-  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  const target = document.getElementById('about');
+  if (!target) return;
+
+  const start = window.pageYOffset;
+  const end = target.getBoundingClientRect().top + start;
+  const distance = end - start;
+  const speed = 3000; // píxeles por segundo (velocidad constante)
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+
+    const progress = speed * (elapsed / 1000);
+    const direction = distance > 0 ? 1 : -1;
+
+    if (progress < Math.abs(distance)) {
+      window.scrollTo(0, start + direction * progress);
+      requestAnimationFrame(step);
+    } else {
+      window.scrollTo(0, end);
+    }
+  }
+
+  requestAnimationFrame(step);
 });
+
 
 // =========================
 // WHATSAPP
@@ -119,23 +144,23 @@ function cerrarModal(id) {
 
 // Funciones específicas que llaman a las genéricas
 function abrirModalReparacion() {
-  abrirModal('modalReparacion', "⚠️<strong>AVISO:</strong> Si llueve, se reprogramará el servicio.");
+  abrirModal('modalReparacion');
 }
 
 function abrirModalDesinstalacion() {
-  abrirModal('modalDesinstalacion', "⚠️<strong>AVISO:</strong> Si llueve, se reprogramará el servicio.");
+  abrirModal('modalDesinstalacion');
 }
 
 function abrirModalInstalacion() {
-  abrirModal('modalInstalacion', "⚠️<strong>AVISO:</strong> Si llueve, se reprogramará la instalación.");
+  abrirModal('modalInstalacion');
 }
 
 function abrirModalCarga() {
-  abrirModal('modalCarga', "⚠️<strong>AVISO:</strong> Si llueve, se reprogramará el servicio.");
+  abrirModal('modalCarga');
 }
 
 function abrirModalMantenimiento() {
-  abrirModal('modalMantenimiento', "⚠️<strong>AVISO:</strong> Si llueve, se reprogramará el servicio.");
+  abrirModal('modalMantenimiento');
 }
 
 function cerrarModalReparacion() {
@@ -268,4 +293,25 @@ function configurarCambioPrecio(formId, precioId) {
 // Inicializar para instalación-desinstalación
 configurarCambioPrecio("formInstalacionAvanzado", "precioInstalacion");
 configurarCambioPrecio("formDesinstalacionAvanzado", "precioDesinstalacion");
+
+// =========================
+// PROMO MINI HERO
+// =========================
+
+  const promoCards = document.querySelectorAll('.promo-mini-slider .promo-card');
+  let currentPromo = 0;
+
+  setInterval(() => {
+    promoCards[currentPromo].classList.remove('visible');
+    currentPromo = (currentPromo + 1) % promoCards.length;
+    promoCards[currentPromo].classList.add('visible');
+  }, 4000); // cambia cada 4 segundos
+
+
+  document.querySelectorAll('.promo-card').forEach(card => {
+  card.style.cursor = 'pointer';  // cambiar cursor para indicar clickeable
+  card.addEventListener('click', () => {
+    window.location.href = '#promos';
+  });
+});
 

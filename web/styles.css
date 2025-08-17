@@ -17,6 +17,7 @@ body {
 }
 
 .hero {
+  position: relative;
   background-size: cover;        /* Ajusta la imagen para cubrir toda la pantalla */
   background-position: center;   /* Centra la imagen */
   background-repeat: no-repeat;  /* Evita que se repita */
@@ -27,7 +28,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 20px;
+  padding: 120px 20px 190px 20px; /* arriba 120px, derecha 20px, abajo 180px, izquierda 20px */
   background-image: linear-gradient(rgba(240, 238, 238, 0.644), rgba(168, 167, 167, 0.5)), url(images-1/fondo-inicio-1.jpg);
 }
 
@@ -87,6 +88,73 @@ body {
 .hero-button:hover {
   background-color: #004599;
 }
+
+/* PROMO MINI EN HERO */
+
+/* Contenedor flotante en fila, dentro del hero */
+.promo-floating-row {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Cada promo */
+.promo-floating-row .promo-card {
+  background-color: white;
+  color: #000;
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  min-width: 180px;
+  max-width: 400px;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.promo-card h4 {
+  margin-top: 40px; /* O ajustá según necesites */
+  font-size: 1.1rem;
+}
+
+
+.promo-floating-row .promo-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Etiquetas opcionales */
+.promo-etiqueta {
+  font-weight: bold;
+  color: white;
+  background-color: #ff5e57;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.promo-etiqueta.color2 {
+  background-color: #2196F3;
+}
+.promo-etiqueta.color3 {
+  background-color: #4CAF50;
+}
+
+/* Responsive: ocultar o apilar en pantallas pequeñas */
+@media (max-width: 768px) {
+  .promo-floating-row {
+    flex-direction: column;
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+/* FIN PROMO MINI EN HERO */
 
 @keyframes fadeInUp {
   from {
@@ -152,7 +220,7 @@ body {
   display: flex;
   gap: 40px;
   font-size: 20px;
-  margin-left: 450px; /* Actualmente lo empuja a la derecha */
+  margin-left: 380px; /* Actualmente lo empuja a la derecha */
 }
 
 .nav a {
@@ -325,8 +393,8 @@ body {
 /* Texto dentro de cada card */
 .card p {
   font-size: 1em;
-  color: #555;
-  line-height: 1.6;
+  color: #666;
+  line-height: 1.5;
 }
 
 /* Responsive */
@@ -479,7 +547,7 @@ body {
 
 .contacto-section {
   padding: 90px 20px;
-  background: linear-gradient(to right, #7985f0, #adb2da);
+  background-color: #f0f0f0;
 }
 
 .contacto-container {
@@ -769,23 +837,11 @@ textarea:focus {
 
 /* AVISO DE LLUVIA */
 .toast-aviso {
-  position: fixed;
-  top: 30px;
-  left: 90px;
-  background-color: #8b92f7;
-  color: #000000;
-  border: 2px solid #4120ff;
-  padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  font-size: 18px;
-  font-weight: 500;
-  z-index: 9999;
-  opacity: 0;
-  transform: translateY(-20px);
-  pointer-events: none;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  max-width: 400px;
+  font-size: 20px;
+  color: #333333; 
+  font-style: italic; /* para diferenciarlo */
+  margin-top: 15px;
+  padding-bottom: 0;
   line-height: 1.4;
 }
 
@@ -926,11 +982,16 @@ textarea#comentarioAdicional {
   border: 1px solid #dbe2ef;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 25px;
 }
 
 .limpieza-box {
   background: linear-gradient(135deg, #e0f7fa, #ffffff);
   transition: transform 0.2s ease;
+
 }
 .limpieza-box:hover {
   transform: translateY(-3px);
@@ -938,7 +999,7 @@ textarea#comentarioAdicional {
 
 .mantenimiento-box h3 {
   margin-top: 0;
-  font-size: 1.2em;
+  font-size: 1.4rem;
   color: #333;
 }
 
@@ -947,6 +1008,7 @@ textarea#comentarioAdicional {
   font-size: 0.95em;
   color: #555;
   line-height: 1.5;
+  margin-top: 25px;
 }
 
 .option-card {
@@ -984,4 +1046,93 @@ textarea#comentarioAdicional {
   .mantenimiento-grid {
     flex-direction: column;
   }
+}
+
+
+/* PROMOCIONES */
+.promociones-avanzadas {
+  padding: 80px 20px 100px;
+  background: linear-gradient(to right, #7985f0, #adb2da);
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.promo-card {
+  background: linear-gradient(135deg, #2cfc59, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.promo-etiqueta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e60000;
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-bottom-right-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.promo-etiqueta.color2 {
+  background-color: #009688;
+}
+
+.promo-etiqueta.color3 {
+  background-color: #3f51b5;
+}
+
+.promo-body {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.promo-body h3 {
+  font-size: 1.3rem;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.promo-precio {
+  font-size: 2.4rem;
+  color: #007BFF;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.promo-texto {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.promo-wsp {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.promo-wsp:hover {
+  background-color: #1ebe5d;
 }

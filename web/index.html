@@ -16,6 +16,7 @@
       <a href="#about">Acerca de</a>
       <a href="#porque-elegirme">Por qué elegir PS</a>
       <a href="#servicios">Servicios</a>
+      <a href="#promos">Promos</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <button class="hamburger" id="hamburger">
@@ -40,6 +41,27 @@
         <path d="M12 16.5l-6-6 1.4-1.4L12 13.7l4.6-4.6L18 10.5z"/>
       </svg>
     </div>
+    <div class="promo-floating-row">
+  <div class="promo-card">
+    <div class="promo-etiqueta">🔥 ¡OFERTA!</div>
+    <h4>Desinstalación + Reinstalación</h4>
+        <a href="#promos"></a>
+    <p class="promo-precio">Desde $200.000</p>
+  </div>
+
+  <div class="promo-card">
+    <div class="promo-etiqueta color3">💡 EXCLUSIVO</div>
+    <h4>Doble Desinstalación</h4>
+    <p class="promo-precio">$85.000</p>
+  </div>
+
+  <div class="promo-card">
+    <div class="promo-etiqueta color2">💧 LIMPIEZA</div>
+    <h4>Mantenimiento + Limpieza</h4>
+    <p class="promo-precio">$60.000</p>
+  </div>
+</div>
+
   </section>
 
   <!-- ABOUT -->
@@ -91,6 +113,10 @@
   <section id="servicios" class="servicios-section">
     <div class="container">
       <h2>Servicios</h2>
+        <!-- TOAST -->
+        
+      <div id="toastAviso" class="toast-aviso"><p><strong>⚠️IMPORTANTE:</strong> En caso de lluvia se reprogramará el servicio.</p></div>
+
       <div class="slider-container">
         <button class="slider-btn left" onclick="moverSlider(-1)">&#10094;</button>
         <div class="slider-wrapper">
@@ -98,13 +124,13 @@
             <div class="servicio slide">
               <img src="images-1/instalación.jpg" alt="Instalación de aire split">
               <h3>Instalación de Aires Split</h3>
-              <p>Instalación de equipos split de todas las marcas. Trabajo seguro y garantizado.</p>
+              <p>Instalación de aires acondicionados split de todas las marcas. Trabajo seguro y garantizado.</p>
               <button class="btn-wsp" onclick="abrirModalInstalacion()">Consultar</button>
             </div>
             <div class="servicio slide">
               <img src="images-1/desmontar-un-aire-acondicionado.jpg" alt="Reparación de aire split">
               <h3>Desinstalación de Aires Split</h3>
-              <p>Desinstalación de equipos split de todas las marcas. Trabajo seguro y garantizado.</p>
+              <p>Desinstalación de aires acondicionados split de todas las marcas. Trabajo seguro y garantizado.</p>
               <button class="btn-wsp" onclick="abrirModalDesinstalacion()">Consultar</button>
             </div>
             <div class="servicio slide">
@@ -143,7 +169,7 @@
             </div>
             <div class="modal-info">
                 <h2>¿Qué le pasa a tu equipo?</h2>
-                <div class="modal-precio" id="precioReparacion">Presupuesto s/ cargo</div>
+                <div class="modal-precio" id="precioReparacion">Presupuesto sin cargo</div>
                 <p>Seleccioná una o más fallas. Si no la encontrás entre las opciones, escribila abajo en comentarios.</p>
                 <div class="visita-info">
                     <strong>💵 Costo de la visita técnica: $10.000</strong>
@@ -187,7 +213,7 @@
             </div>
             <div class="modal-info">
                 <h2>Mantenimiento Preventivo</h2>
-                <div class="modal-precio" id="precioMantenimiento">Presupuesto s/ cargo</div>
+                <div class="modal-precio" id="precioMantenimiento">Presupuesto sin cargo</div>
                 <form id="formMantenimientoAvanzado">
                     <p>Seleccioná una opción.</p>
                     <div class="mantenimiento-grid">
@@ -208,7 +234,7 @@
                             <!-- Cada cuánto hacer un mantenimiento -->
                             <div class="mantenimiento-box limpieza-box">
                                 <h3>🔎  ¿Por qué hacer una Revisión?</h3>
-                                <p>✅ Es recomendable hacer mantenimiento cada 4 meses.</p>
+                                <p class="texto-secuencial">✅ La revisión periódica garantiza su rendimiento y previene fallos costosos.</p>
                             </div>
                         </div>
                     </div>
@@ -354,6 +380,53 @@
 </div>
 
 
+  <!-- BOTÓN WHATSAPP -->
+  <a href="https://wa.me/5491126974113?text=Hola,%20quiero%20hacer%20una%20consulta..." class="whatsapp-float" target="_blank" aria-label="Enviar mensaje por WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
+  </a>
+
+
+<section class="promociones-avanzadas" id="promos">
+  <div class="container">
+    <h2 class="section-title">🔥 ¡Promociones Imperdibles!</h2>
+    <div class="promo-grid">
+
+      <div class="promo-card">
+        <div class="promo-etiqueta">🔥 ¡OFERTA!</div>
+        <div class="promo-body">
+          <h3>Desinstalación + Reinstalación</h3>
+          <p class="promo-precio">Desde $200.000</p>
+          <p class="promo-texto">¡Ideal si estás por mudarte!</p>
+          <a href="https://wa.me/5491126974113" class="promo-wsp">Consultar Ahora</a>
+        </div>
+      </div>
+
+      <div class="promo-card">
+        <div class="promo-etiqueta color3">💡 EXCLUSIVO</div>
+        <div class="promo-body">
+          <h3>Doble Desinstalación </h3>
+          <p class="promo-precio">$85.000</p>
+          <p class="promo-texto">Desinstalá más y pagá menos</p>
+          <a href="https://wa.me/5491126974113" class="promo-wsp">Pedir por WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="promo-card">
+        <div class="promo-etiqueta color2">💧 LIMPIEZA</div>
+        <div class="promo-body">
+          <h3>Mantenimiento + Limpieza</h3>
+          <p class="promo-precio">$60.000</p>
+          <p class="promo-texto">Dejá tu aire como nuevo</p>
+          <a href="https://wa.me/5491126974113" class="promo-wsp">Solicitar ahora</a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+
   <!-- CONTACTO -->
   <section id="contacto" class="contacto-section">
     <h2 class="titulo-contacto">Contacto</h2>
@@ -375,11 +448,7 @@
     </div>
   </section>
 
-  <!-- BOTÓN WHATSAPP -->
-  <a href="https://wa.me/5491126974113?text=Hola,%20quiero%20hacer%20una%20consulta..." class="whatsapp-float" target="_blank" aria-label="Enviar mensaje por WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
-  </a>
-
+  
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
@@ -414,8 +483,6 @@
     </div>
   </footer>
 
-  <!-- TOAST -->
-  <div id="toastAviso" class="toast-aviso"></div>
 
   <!-- SCRIPTS -->
   <script src="scripts.js"></script>
